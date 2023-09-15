@@ -24,5 +24,17 @@ namespace AWP_WPF_Project
         {
             InitializeComponent();
         }
+
+        private void BtnCollapse_Click(object sender, RoutedEventArgs e)
+        {
+            if (DockPanelMenu.Visibility == Visibility.Collapsed)
+            {
+                DockPanelMenu.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                DockPanelMenu.Visibility = Visibility.Collapsed;
+            }
+        }
     }
 }

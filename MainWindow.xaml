@@ -7,17 +7,26 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" >
     <Grid>
-        <TabControl>
-            <TabItem Header="Movie">
+
+        <TabControl Panel.ZIndex="1">
+            <TabItem Header="Movie" Height="30">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="MovieTable" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,226,303"/>
+                    <DataGrid x:Name="MovieTable" d:ItemsSource="{d:SampleData ItemCount=25}" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Show">
+            <TabItem Header="Show" Height="30">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="ShowTable" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,226,303"/>
+                    <DataGrid x:Name="ShowTable" d:ItemsSource="{d:SampleData ItemCount=18}"/>
                 </Grid>
             </TabItem>
         </TabControl>
+        <DockPanel x:Name="DockPanelMenu" Margin="600,30,0,0" Visibility="Visible" Panel.ZIndex="99999" >
+            <Grid Background="White">
+                <Button Height="30" Margin="0,35,0,339">Edit</Button>
+                <Button Height="30" Margin="0,70,0,304">Delete</Button>
+                <Button Height="30" Margin="0,0,0,374">Add</Button>
+            </Grid>
+        </DockPanel>
+        <Button x:Name="BtnCollapse" Content="Button" HorizontalAlignment="Left" Margin="750,1,0,0" VerticalAlignment="Top" Click="BtnCollapse_Click"/>
     </Grid>
 </Window>
