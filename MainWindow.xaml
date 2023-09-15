@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" >
     <Grid>
-
         <TabControl Panel.ZIndex="1">
             <TabItem Header="Movie" Height="30">
                 <Grid Background="#FFE5E5E5">
@@ -20,13 +19,13 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <DockPanel x:Name="DockPanelMenu" Margin="600,30,0,0" Visibility="Visible" Panel.ZIndex="99999" >
+        <DockPanel x:Name="DockPanelMenu" Margin="600,30,0,0" Visibility="Collapsed" Panel.ZIndex="100" >
             <Grid Background="White">
-                <Button Height="30" Margin="0,35,0,339">Edit</Button>
-                <Button Height="30" Margin="0,70,0,304">Delete</Button>
-                <Button Height="30" Margin="0,0,0,374">Add</Button>
+                <Button x:Name="BtnAdd" Margin="0,35,0,339" Content="Add"/>
+                <Button x:Name="BtnEdit"  Margin="0,70,0,304" Content="Edit"/>
+                <Button x:Name="BtnDelete" Margin="0,0,0,374" Content="Delete"/>
             </Grid>
         </DockPanel>
-        <Button x:Name="BtnCollapse" Content="Button" HorizontalAlignment="Left" Margin="750,1,0,0" VerticalAlignment="Top" Click="BtnCollapse_Click"/>
+        <Button x:Name="BtnCollapse" Content="Button" HorizontalAlignment="Left" Margin="750,1,0,0" VerticalAlignment="Top" Click="BtnCollapse_Click" Panel.ZIndex="100"/>
     </Grid>
 </Window>
