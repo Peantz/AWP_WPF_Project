@@ -20,6 +20,7 @@ namespace AWP_WPF_Project
         {
             InitializeComponent();
             SelectAllMovies();
+            SelectAllShows();
         }
 
         private void BtnCollapse_Click(object sender, RoutedEventArgs e)
@@ -48,9 +49,6 @@ namespace AWP_WPF_Project
         }
         public void SelectAllMovies()
         {
-
-
-
             using (SqlConnection con = MySqlConnection())
             {
                 string query = "SELECT * FROM MEDIUM WHERE MOVIE = 1";
@@ -60,7 +58,18 @@ namespace AWP_WPF_Project
                 sda.Fill(dt);
                 MovieTable.ItemsSource = dt.DefaultView;
             }
-
+        }
+        public void SelectAllShows()
+        {
+            using (SqlConnection con = MySqlConnection())
+            {
+                string query = "SELECT * FROM MEDIUM WHERE SHOW = 1";
+                SqlCommand command = MySqlCommand(query);
+                SqlDataAdapter sda = new SqlDataAdapter(command);
+                DataTable dt = new DataTable("Medium");
+                sda.Fill(dt);
+                ShowTable.ItemsSource = dt.DefaultView;
+            }
         }
     }
 }

@@ -5,23 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AWP_WPF_Project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" >
+        Title="MainWindow" Height="450" Width="900" WindowStartupLocation="CenterScreen" >
     <Grid>
-        <TabControl Panel.ZIndex="1">
-            <TabItem Header="Movie" Height="30">
-                <DataGrid x:Name="MovieTable">
-                    
+        <TabControl Panel.ZIndex="1" Background="White">
+            <TabItem Header="Movie" Height="30" Style="{StaticResource TabItemStyle}">
+                <DataGrid x:Name="MovieTable" Style="{StaticResource DataGridStyle}">
                 </DataGrid>
             </TabItem>
-            <TabItem Header="Show" Height="30">
-                <DataGrid x:Name="ShowTable" d:ItemsSource="{d:SampleData ItemCount=18}" Grid.ColumnSpan="2"/>
+            <TabItem Header="Show" Height="30" Style="{StaticResource TabItemStyle}">
+                <DataGrid x:Name="ShowTable" Style="{StaticResource DataGridStyle}"/>
             </TabItem>
         </TabControl>
-        <StackPanel x:Name="DockPanelMenu" Margin="600,30,0,0" Visibility="Visible" Panel.ZIndex="100" >
-                <Button x:Name="BtnAdd" Content="Add"/>
-                <Button x:Name="BtnEdit" Content="Edit"/>
-            <Button x:Name="BtnDelete" Content="Delete"/>
+        <StackPanel x:Name="DockPanelMenu" Margin="0,30,0,0" Visibility="Collapsed" Panel.ZIndex="100" Background="White" HorizontalAlignment="Right" Width="225">
+            <Button x:Name="BtnAdd" Content="Add" Margin="5" Style="{StaticResource BtnStyle}" />
+            <Button x:Name="BtnEdit" Content="Edit" Margin="5" Style="{StaticResource BtnStyle}" />
+            <Button x:Name="BtnDelete" Content="Delete" Margin="5" Style="{StaticResource BtnStyle}" />
         </StackPanel>
-        <Button x:Name="BtnCollapse" Content="Button" HorizontalAlignment="Left" Margin="750,1,0,0" VerticalAlignment="Top" Click="BtnCollapse_Click" Panel.ZIndex="100"/>
+        <Button x:Name="BtnCollapse" Content="Menu" Style="{StaticResource BtnStyle}" HorizontalAlignment="Right" Margin="0,4,18,0" VerticalAlignment="Top" Click="BtnCollapse_Click" Panel.ZIndex="100" Height="25" Width="50"/>
     </Grid>
 </Window>
