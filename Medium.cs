@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace AWP_WPF_Project
 {
-    internal class MediumTable
+    public class Medium
     {
-        public string mediumtitle;
+        public int ID;
+        public string title;
         public double rating;
         public DateTime watched;
-        public int season;
+        public int seasons;
         public bool movie;
         public bool show;
     }
