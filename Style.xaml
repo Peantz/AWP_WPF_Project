@@ -37,5 +37,6 @@
     <Style x:Key="DataGridStyle" TargetType="{x:Type DataGrid}">
         <Setter Property="FontFamily" Value="Verdana"/>
         <Setter Property="Background" Value="White"/>
+        <Setter Property="ColumnHeaderHeight" Value="20"/>
     </Style>
 </ResourceDictionary>

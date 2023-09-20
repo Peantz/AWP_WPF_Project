@@ -16,11 +16,11 @@
                 <DataGrid x:Name="ShowTable" Style="{StaticResource DataGridStyle}"/>
             </TabItem>
         </TabControl>
-        <Border x:Name="BorderMenu" BorderBrush="Black" HorizontalAlignment="Right" Width="225" BorderThickness="0.5" Visibility="Collapsed" Margin="0,30,0,0" Panel.ZIndex="100" >
+        <Border x:Name="BorderMenu" BorderBrush="Black" HorizontalAlignment="Right" Width="225" BorderThickness="0.5" Visibility="Visible" Margin="0,30,0,0" Panel.ZIndex="100" >
         <StackPanel Background="White">
-            <Button x:Name="BtnAdd" Content="Add" Margin="5" Style="{StaticResource BtnStyle}" />
-            <Button x:Name="BtnEdit" Content="Edit" Margin="5" Style="{StaticResource BtnStyle}" />
-            <Button x:Name="BtnDelete" Content="Delete" Margin="5" Style="{StaticResource BtnStyle}" />
+            <Button x:Name="BtnAdd" Content="Add" Margin="5" Style="{StaticResource BtnStyle}" Click="BtnAdd_Click" />
+                <Button x:Name="BtnSafeEdit" Content="Edit" Margin="5" Style="{StaticResource BtnStyle}" Click="BtnSafeEdit_Click" />
+            <Button x:Name="BtnDelete" Content="Delete" Margin="5" Style="{StaticResource BtnStyle}" Click="BtnDelete_Click" />
         </StackPanel>
         </Border>
         <Button x:Name="BtnCollapse" Content="Menu" Style="{StaticResource BtnStyle}" HorizontalAlignment="Right" Margin="0,4,18,0" VerticalAlignment="Top" Click="BtnCollapse_Click" Panel.ZIndex="100" Height="25" Width="50"/>

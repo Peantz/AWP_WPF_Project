@@ -40,5 +40,21 @@ namespace AWP_WPF_Project
             CreateMedium create = new CreateMedium();
             create.Show();
         }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            CreateMedium create = new CreateMedium();
+            create.Show();
+        }
+
+        private void BtnSafeEdit_Click(object sender, RoutedEventArgs e)
+        {
+            string query = "UPDATE MEDIUM SET ";
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
