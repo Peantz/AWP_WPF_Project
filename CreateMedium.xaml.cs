@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,24 @@ namespace AWP_WPF_Project
         public CreateMedium()
         {
             InitializeComponent();
+        }
+
+        private void ButtonSafe_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        public void Insert()
+        {
+            using (SqlConnection con = database.MySqlConnection())
+            {
+                string query = "SELECT * FROM MEDIUM WHERE MOVIE = 1";
+                SqlCommand command = database.MySqlCommand(query);
+                SqlDataAdapter sda = new SqlDataAdapter(command);
+                DataTable dt = new DataTable("Medium");
+                sda.Fill(dt);
+                MovieTable.ItemsSource = dt.DefaultView;
+            }
         }
     }
 }

@@ -19,8 +19,8 @@ namespace AWP_WPF_Project
         public MainWindow()
         {
             InitializeComponent();
-            SelectAllMovies();
-            SelectAllShows();
+            Database.SelectAllMovies();
+            Database.SelectAllShows();
         }
 
         private void BtnCollapse_Click(object sender, RoutedEventArgs e)
@@ -34,42 +34,11 @@ namespace AWP_WPF_Project
                 BorderMenu.Visibility = Visibility.Collapsed;
             }
         }
-        private SqlConnection MySqlConnection()
+        
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            var connection = ConfigurationManager.ConnectionStrings["MediaConnectionString"].ConnectionString;
-            SqlConnection sqlConnection = new SqlConnection(connection);
-            sqlConnection.Open();
-            return sqlConnection;
-        }
-        private SqlCommand MySqlCommand(string command)
-        {
-            SqlCommand sqlCommand = new SqlCommand(command, MySqlConnection());
-            sqlCommand.CommandType = CommandType.Text;
-            return sqlCommand;
-        }
-        public void SelectAllMovies()
-        {
-            using (SqlConnection con = MySqlConnection())
-            {
-                string query = "SELECT * FROM MEDIUM WHERE MOVIE = 1";
-                SqlCommand command = MySqlCommand(query);
-                SqlDataAdapter sda = new SqlDataAdapter(command);
-                DataTable dt = new DataTable("Medium");
-                sda.Fill(dt);
-                MovieTable.ItemsSource = dt.DefaultView;
-            }
-        }
-        public void SelectAllShows()
-        {
-            using (SqlConnection con = MySqlConnection())
-            {
-                string query = "SELECT * FROM MEDIUM WHERE SHOW = 1";
-                SqlCommand command = MySqlCommand(query);
-                SqlDataAdapter sda = new SqlDataAdapter(command);
-                DataTable dt = new DataTable("Medium");
-                sda.Fill(dt);
-                ShowTable.ItemsSource = dt.DefaultView;
-            }
+            CreateMedium create = new CreateMedium();
+            create.Show();
         }
     }
 }

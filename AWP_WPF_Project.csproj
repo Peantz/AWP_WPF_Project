@@ -86,6 +86,7 @@
     <Compile Include="CreateMedium.xaml.cs">
       <DependentUpon>CreateMedium.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Database.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
