@@ -25,13 +25,13 @@ namespace AWP_WPF_Project
 
         private void BtnCollapse_Click(object sender, RoutedEventArgs e)
         {
-            if (DockPanelMenu.Visibility == Visibility.Collapsed)
+            if (BorderMenu.Visibility == Visibility.Collapsed)
             {
-                DockPanelMenu.Visibility = Visibility.Visible;
+                BorderMenu.Visibility = Visibility.Visible;
             }
             else
             {
-                DockPanelMenu.Visibility = Visibility.Collapsed;
+                BorderMenu.Visibility = Visibility.Collapsed;
             }
         }
         private SqlConnection MySqlConnection()
